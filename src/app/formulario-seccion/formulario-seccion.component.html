@@ -1,1 +1,20 @@
-<p>formulario-seccion works!</p>
+<h2>Nueva sección</h2><br><br>
+<table>
+    <tr>
+        <th>ID</th>
+        <td>
+            <input type="number" [value]="nuevaSeccion.id">
+        </td>
+    </tr>
+    <tr>
+        <th>Nombre</th>
+        <td>
+            <input type="text" [value]="nuevaSeccion.nombre">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <button type="button" (click)="guardar()">Guardar sección</button>
+        </th>
+    </tr>
+</table><br>

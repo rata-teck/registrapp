@@ -1,1 +1,44 @@
-<p>formulario-alumno works!</p>
+<h2>Nuevo alumno</h2><br><br>
+<table>
+    <tr>
+        <th>RUT</th>
+        <td>
+            <input type="text" [value]="alumno.rut">
+        </td>
+    </tr>
+    <tr>
+        <th>Nombre</th>
+        <td>
+            <input type="text" [value]="alumno.nombre">
+        </td>
+    </tr>
+    <tr>
+        <th>Apellido</th>
+        <td>
+            <input type="text" [value]="alumno.apellido">
+        </td>
+    </tr>
+    <tr>
+        <th>Edad</th>
+        <td>
+            <input type="number" [value]="alumno.edad">
+        </td>
+    </tr>
+    <tr>
+        <th>ID de sección</th>
+        <td>
+            <input type="number" [value]="seccion.id">
+        </td>
+    </tr>
+    <tr>
+        <th>Nombre de sección</th>
+        <td>
+            <input type="text" [value]="seccion.nombre">
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <button type="button" (click)="guardar()">Guardar alumno</button>
+        </th>
+    </tr>
+</table>
