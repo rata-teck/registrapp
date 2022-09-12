@@ -1,1 +1,10 @@
-<p>lista-historial works!</p>
+<h4>Historial de asistencia</h4>
+<br>
+<table class="table" *ngFor="let h of historial">
+    <tr>
+        <th>{{h.alumno.seccion.nombre}}-{{h.alumno.seccion.id}}</th>
+        <th>{{h.alumno.nombre}} {{h.alumno.apellido}}</th>
+        <td>{{h.fecha}}</td>
+        <td>{{h.hora}}</td>
+    </tr>
+</table>

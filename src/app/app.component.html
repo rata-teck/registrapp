@@ -1,0 +1,39 @@
+<div class="fondo">
+    <div class="container">
+        <br><br>
+        <h2>RegistrAPP</h2>
+        <br><br>
+        <div class="row">
+            <div class="col-8">
+                <app-lista-historial [historial]="historial"></app-lista-historial>
+            </div>
+            <div class="col-4">
+                <app-lista-alumnos [alumno]="alumno"></app-lista-alumnos>
+            </div>
+        </div><br>
+        <h4>Nuevo registro</h4><br>
+        <table class="table">
+            <tr>
+                <th>Sección</th>
+                <td>
+                    <select [value]="registro.alumno.seccion.nombre" *ngFor="let a2 of seccion">
+                        <option value="{{a2.nombre}}">{{a2.nombre}}</option>
+                    </select>
+                </td>
+                <td>
+                    <select [value]="registro.alumno.seccion.id" *ngFor="let a3 of seccion">
+                        <option value="{{a3.id}}">{{a3.id}}</option>
+                    </select>
+                </td>
+            </tr>
+        </table><br><br>
+        <div class="row">
+            <div class="col-6">
+                <app-formulario-seccion [secciones]="seccion"></app-formulario-seccion>
+            </div>
+            <div class="col-6">
+                <app-formulario-alumno (enviarAlumno)="puenteAlumno($event)"></app-formulario-alumno>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Seccion } from '../seccion';
 
 @Component({
@@ -9,16 +9,16 @@ import { Seccion } from '../seccion';
 export class FormularioSeccionComponent {
   //@Output()
   //public envio = new EventEmitter();
-  @Output()
-  public enviarDatos = new EventEmitter<Seccion>();
   public nuevaSeccion : Seccion = {
     id : 0,
     nombre : ''
   }
+  @Input()
+  public secciones : Array<Seccion> = [];
   public guardar() : void{
     const clon = {
       ...this.nuevaSeccion
     }
-    this.enviarDatos.emit(clon);
+    this.secciones.push(clon);
   }
 }
