@@ -8,13 +8,6 @@ import { Seccion } from '../seccion';
   styleUrls: ['./lista-alumnos.component.scss']
 })
 export class ListaAlumnosComponent {
-  public alumnos : Array<Alumno> = [];
   @Input()
-  alumno! : Alumno;
-  if(alumno =! NaN){
-    const copia = {
-      ...this.alumno
-    }
-    this.alumnos.push(copia);
-  }
+  public alumnos! : Array<Alumno>;
 }

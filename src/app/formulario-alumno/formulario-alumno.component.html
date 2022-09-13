@@ -3,37 +3,41 @@
     <tr>
         <th>RUT</th>
         <td>
-            <input type="text" [value]="alumno.rut">
+            <input type="text" [value]="alumno.rut" (change)="cambiaRut($event)">
         </td>
     </tr>
     <tr>
         <th>Nombre</th>
         <td>
-            <input type="text" [value]="alumno.nombre">
+            <input type="text" [value]="alumno.nombre" (change)="cambiaNombre($event)">
         </td>
     </tr>
     <tr>
         <th>Apellido</th>
         <td>
-            <input type="text" [value]="alumno.apellido">
+            <input type="text" [value]="alumno.apellido" (change)="cambiaApellido($event)">
         </td>
     </tr>
     <tr>
         <th>Edad</th>
         <td>
-            <input type="number" [value]="alumno.edad">
+            <input type="number" [value]="alumno.edad" (change)="cambiaEdad($event)">
         </td>
     </tr>
     <tr>
         <th>ID de sección</th>
         <td>
-            <input type="number" [value]="seccion.id">
+            <select (click)="cambiaIdSeccion($event)">
+                <option value="0">--- SELECCIONAR ---</option>
+                <option *ngFor="let a6 of secciones" value="{{a6.id}}">{{a6.id}}</option>
+            </select>
         </td>
     </tr>
     <tr>
         <th>Nombre de sección</th>
         <td>
-            <select (input)="cambiaNombreSeccion($event)">
+            <select (click)="cambiaNombreSeccion($event)">
+              <option value="">--- SELECCIONAR ---</option>
               <option *ngFor="let a5 of secciones" value="{{a5.nombre}}">{{a5.nombre}}</option>
             </select>
         </td>

@@ -27,7 +27,7 @@ export class AppComponent {
   }
   @Input()
   public puenteAlumno(alumno:Alumno):void{
-    this.alumno = alumno;
+    this.alumnos.push(alumno);
   }
   public seccion : Array<Seccion> = [];
   public recibeSecciones(secciones : Array<Seccion>):void{
@@ -35,5 +35,20 @@ export class AppComponent {
   }
   public cambiaNombreSeccion(event : Event):void{
     this.registro.alumno.seccion.nombre = (event.target as HTMLInputElement).value;
+  }
+  public alumnos:Array<Alumno> = [];
+  public seleccionaAlumno(event : Event):void{
+    const Apellido = (event.target as HTMLInputElement).value;
+    for(let a7 of this.alumnos){
+      if(a7.apellido == Apellido){
+        this.alumno.nombre = a7.nombre;
+        this.alumno.apellido = a7.apellido;
+        this.alumno.rut = a7.rut;
+        this.alumno.seccion = a7.seccion;
+      }
+    }
+  }
+  public cambiaIdSeccion(event : Event):void{
+    this.alumno.seccion.id = parseInt((event.target as HTMLInputElement).value);
   }
 }
