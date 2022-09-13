@@ -11,10 +11,10 @@ export class ListaAlumnosComponent {
   public alumnos : Array<Alumno> = [];
   @Input()
   alumno! : Alumno;
-  public nuevoAlumno():void{
-    const copiaAlumno = {
+  if(alumno =! NaN){
+    const copia = {
       ...this.alumno
     }
-    this.alumnos.push(copiaAlumno);
+    this.alumnos.push(copia);
   }
 }

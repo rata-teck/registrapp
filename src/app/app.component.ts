@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BaseHistorial } from './base-historial';
 import { Seccion } from './seccion';
 import { Alumno } from './alumno';
-import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
 
 @Component({
   selector: 'app-root',
@@ -26,10 +25,15 @@ export class AppComponent {
     }
     this.historial.push(copiaRegistro);
   }
-  @Output()
+  @Input()
   public puenteAlumno(alumno:Alumno):void{
     this.alumno = alumno;
-    this.e.emit(alumno);
   }
-  public seccion! : Array<Seccion>;
+  public seccion : Array<Seccion> = [];
+  public recibeSecciones(secciones : Array<Seccion>):void{
+    this.seccion = secciones;
+  }
+  public cambiaNombreSeccion(event : Event):void{
+    this.registro.alumno.seccion.nombre = (event.target as HTMLInputElement).value;
+  }
 }

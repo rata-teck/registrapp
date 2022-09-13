@@ -16,12 +16,12 @@
             <tr>
                 <th>Sección</th>
                 <td>
-                    <select [value]="registro.alumno.seccion.nombre" *ngFor="let a2 of seccion">
-                        <option value="{{a2.nombre}}">{{a2.nombre}}</option>
+                    <select (change)="cambiaNombreSeccion($event)">
+                        <option *ngFor="let a2 of seccion" value="{{a2.nombre}}">{{a2.nombre}}</option>
                     </select>
                 </td>
                 <td>
-                    <select [value]="registro.alumno.seccion.id" *ngFor="let a3 of seccion">
+                    <select *ngFor="let a3 of seccion">
                         <option value="{{a3.id}}">{{a3.id}}</option>
                     </select>
                 </td>
@@ -29,10 +29,10 @@
         </table><br><br>
         <div class="row">
             <div class="col-6">
-                <app-formulario-seccion [secciones]="seccion"></app-formulario-seccion>
+                <app-formulario-seccion (a4)="recibeSecciones($event)"></app-formulario-seccion>
             </div>
             <div class="col-6">
-                <app-formulario-alumno (enviarAlumno)="puenteAlumno($event)"></app-formulario-alumno>
+                <app-formulario-alumno (enviarAlumno)="puenteAlumno($event)" [secciones]="seccion"></app-formulario-alumno>
             </div>
         </div>
     </div>

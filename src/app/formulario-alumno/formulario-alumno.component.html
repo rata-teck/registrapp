@@ -33,7 +33,9 @@
     <tr>
         <th>Nombre de sección</th>
         <td>
-            <input type="text" [value]="seccion.nombre">
+            <select (input)="cambiaNombreSeccion($event)">
+              <option *ngFor="let a5 of secciones" value="{{a5.nombre}}">{{a5.nombre}}</option>
+            </select>
         </td>
     </tr>
     <tr>

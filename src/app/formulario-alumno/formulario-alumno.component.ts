@@ -1,6 +1,5 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { Alumno } from '../alumno';
-import { ListaAlumnosComponent } from '../lista-alumnos/lista-alumnos.component';
 import { Seccion } from '../seccion';
 
 @Component({
@@ -23,6 +22,25 @@ export class FormularioAlumnoComponent {
     apellido : '',
     edad : 0,
     seccion : this.seccion
+  }
+
+  public cambiaNombre(event : Event):void{
+    this.alumno.nombre = (event.target as HTMLInputElement).value;
+  }
+  public cambiaRut(event : Event):void{
+    this.alumno.rut = (event.target as HTMLInputElement).value;
+  }
+  public cambiaApellido(event : Event):void{
+    this.alumno.apellido = (event.target as HTMLInputElement).value;
+  }
+  public cambiaEdad(event : Event):void{
+    this.alumno.edad = parseInt((event.target as HTMLInputElement).value);
+  }
+  public cambiaNombreSeccion(event : Event):void{
+    this.seccion.nombre = (event.target as HTMLInputElement).value;
+  }
+  public cambiaIdSeccion(event : Event):void{
+    this.seccion.id = parseInt((event.target as HTMLInputElement).value);
   }
 
   guardar():void{

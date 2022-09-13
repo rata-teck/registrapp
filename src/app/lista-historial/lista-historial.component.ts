@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { BaseHistorial } from '../base-historial';
-import { Alumno } from '../alumno';
-import { Seccion } from '../seccion';
 
 @Component({
   selector: 'app-lista-historial',

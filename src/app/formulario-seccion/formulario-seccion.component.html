@@ -3,13 +3,13 @@
     <tr>
         <th>ID</th>
         <td>
-            <input type="number" [value]="nuevaSeccion.id">
+            <input type="number" [value]="nuevaSeccion.id" (change)="cambiaId($event)">
         </td>
     </tr>
     <tr>
         <th>Nombre</th>
         <td>
-            <input type="text" [value]="nuevaSeccion.nombre">
+            <input type="text" [value]="nuevaSeccion.nombre" (change)="cambiaNombre($event)">
         </td>
     </tr>
     <tr>
